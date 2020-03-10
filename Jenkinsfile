@@ -15,6 +15,11 @@ pipeline {
    steps {
     echo "Hello New Stage added."
    }
+  }	
+  stage('Prod stage') {
+   steps {
+    echo "Hello New Prod Stage added."
+   }
   }		
  }
 }
