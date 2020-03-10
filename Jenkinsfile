@@ -2,9 +2,13 @@ pipeline {
  agent any
  stages {
   stage('Compile stage') {
-   withMaven(maven : 'maven'){
+   steps {
     echo "Hello"
-   }		
+   }	
+  stage('Test stage') {
+   steps {
+    echo "Hello New"
+   }	
   }	
  }
 }
