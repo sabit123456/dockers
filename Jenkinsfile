@@ -4,7 +4,8 @@ pipeline {
   registryCredential = ‘dockerhub’
   dockerImage = ''
  }
- agent any	
+ agent any
+ stages {	
   stage('Test stage') {
    steps {
     echo "Hello New"
