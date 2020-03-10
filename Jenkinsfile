@@ -1,25 +1,30 @@
 pipeline {
- agent any
- stages {
-  stage('Compile stage') {
-   steps {
-    echo "Hello"
-   }
-  }	
+ environment {
+  registry = "sabit12 / my-nginx"
+  registryCredential = ‘dockerhub’
+  dockerImage = ''
+ }
+ agent any	
   stage('Test stage') {
    steps {
     echo "Hello New"
    }  
-  }
-  stage('Deploy stage') {
-   steps {
-    echo "Hello New Stage added."
-   }
-  }	
-  stage('Prod stage') {
-   steps {
-    echo "Hello New Prod Stage added."
-   }
   }		
+  stage('Building image') {
+   steps{
+    script {
+     docker.build registry + ":$BUILD_NUMBER"
+    }
+   }
+  }
+  stage('Deploy Image') {
+   steps{
+    script {
+     docker.withRegistry( '', registryCredential ) {
+      dockerImage.push()
+     }
+    }
+   }
+  }
  }
 }
