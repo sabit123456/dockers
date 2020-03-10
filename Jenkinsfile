@@ -8,7 +8,6 @@ pipeline {
   stage('Test stage') {
    steps {
     echo "Hello New"
-   }	
-  }	
+   }		
  }
 }
