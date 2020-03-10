@@ -1,7 +1,7 @@
 pipeline {
  environment {
   registry = "sabit12 / my-nginx"
-  registryCredential = ‘dockerhub’
+  registryCredential = "dockerhub"
   dockerImage = ''
  }
  agent any
