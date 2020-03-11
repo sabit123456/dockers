@@ -45,7 +45,7 @@ pipeline {
      sh 'ssh -v besolstechnologies@35.230.170.177'
      sh 'scp /var/lib/jenkins/workspace/new-jenkins/* besolstechnologies@35.230.170.177:/home/besolstechnologies/startup/'
      sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 chmod +x startup/client-script.sh'
-     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 docker container rm -f my-nginx.container'
+     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 docker container rm -f my-nginx-container'
      sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 startup/client-script.sh'
     }
    }
