@@ -29,7 +29,7 @@ pipeline {
   }
   stage('Remove Unused docker image') {
    steps{
-    sh "docker image rmi -f $(docker images -aq)"
+    sh "docker rmi $registry:$BUILD_NUMBER"
    }
   }
   stage('Final Comments') {
