@@ -32,5 +32,10 @@ pipeline {
     sh "docker rmi $registry:$BUILD_NUMBER"
    }
   }
+  stage('Final Comments') {
+   steps {
+    echo "All clear"
+   }  
+  }
  }
 }
