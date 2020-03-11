@@ -45,7 +45,7 @@ pipeline {
      sh 'ssh -v besolstechnologies@35.230.170.177'
      sh 'cd /'
      sh 'mkdir startup'
-     sh 'scp /var/lib/jenkins/workspace/new-jenkins/* besolstechnologies@35.230.170.177:/root/startup/'
+     sh 'sudo scp /var/lib/jenkins/workspace/new-jenkins/* besolstechnologies@35.230.170.177:/root/startup/'
      sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 chmod +x startup/client-script.sh'
      sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 startup/client-script.sh ${registry}:$BUILD_NUMBER'
     }
