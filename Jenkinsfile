@@ -8,7 +8,7 @@ pipeline {
  stages {	
   stage('Test stage') {
    steps {
-    echo "Hello New"
+    echo "Hello New Checked"
    }  
   }		
   stage('Building image') {
