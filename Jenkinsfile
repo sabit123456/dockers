@@ -41,12 +41,12 @@ pipeline {
    steps {
     echo "****************Deploy***************"
     sshagent(credentials : ['docker-client']) {
-     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 uptime'
-     sh 'ssh -v besolstechnologies@35.230.170.177'
-     sh 'scp /var/lib/jenkins/workspace/new-jenkins/* besolstechnologies@35.230.170.177:/home/besolstechnologies/startup/'
-     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 chmod +x startup/client-script.sh'
-     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 docker container rm -f my-ngninx-container'
-     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.230.170.177 startup/client-script.sh'
+     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 uptime'
+     sh 'ssh -v besolstechnologies@35.236.252.223'
+     sh 'scp /var/lib/jenkins/workspace/new-jenkins/* besolstechnologies@35.236.252.223:/home/besolstechnologies/startup/'
+     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 chmod +x startup/client-script.sh'
+     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 docker container rm -f my-ngninx-container'
+     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 startup/client-script.sh'
     }
    }
   }
