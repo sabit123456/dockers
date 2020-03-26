@@ -45,7 +45,7 @@ pipeline {
      sh 'ssh -v besolstechnologies@35.236.252.223'
      sh 'scp /var/lib/jenkins/workspace/github-jenkins-dockers/* besolstechnologies@35.236.252.223:/home/besolstechnologies/'
      sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 chmod +x client-script.sh'
-     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 startup/client-script.sh'
+     sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 client-script.sh'
     }
    }
   }
