@@ -40,7 +40,7 @@ pipeline {
   stage('Deploy') {
    steps {
     echo "****************Deploy***************"
-    sshagent(credentials : ['docker-client']) {
+    sshagent(credentials : ['dockerhub']) {
      sh 'ssh -o StrictHostKeyChecking=no besolstechnologies@35.236.252.223 uptime'
      sh 'ssh -v besolstechnologies@35.236.252.223'
      sh 'scp /var/lib/jenkins/workspace/new-jenkins/* besolstechnologies@35.236.252.223:/home/besolstechnologies/startup/'
